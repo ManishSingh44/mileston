@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vowels counter</title>
+</head>
+<body>
+    <form>
+		<label for="name">Enter your name:</label>
+		<input type="text" id="name" name="name"><br><br>
+		<button type="button" onclick="countVowels()">Submit</button>
+	</form>
+	<br>
+	<p id="result"></p>
+	<script>
+		function countVowels() {
+			let nameInput = document.getElementById("name").value;
+			let vowels = ["a", "e", "i", "o", "u"];
+			let count = 0;
+
+			for (let i = 0; i < nameInput.length; i++) {
+				if (vowels.includes(nameInput[i].toLowerCase())) {
+					count++;
+				}
+			}
+
+			document.getElementById("result").innerHTML = "The number of vowels in your name is: " + count;
+		}
+	</script>
+</body>
+</html>
